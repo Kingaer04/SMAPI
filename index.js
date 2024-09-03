@@ -41,7 +41,13 @@ db.once("open", () => {
 })
 
 
-app.use('/', router)
+app.get('/', (req, res)=> {
+    res.send("Api connected successfully")
+})
+
+app.use("", router)
+
+
 
 app.set('port', process.env.PORT || 8000)
 
