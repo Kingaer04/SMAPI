@@ -48,3 +48,5 @@ app.set('port', process.env.PORT || 8000)
 app.listen(app.get('port'), () => {
     console.log(`Server is running on https://localhost/${app.get('port')}`)
 }) 
+
+module.exports = app;
