@@ -130,39 +130,39 @@ export const adminController = {
 }
 
 // Function to create the default admin user
-const createDefaultAdmin = async () => {
-    try {
-      // Check if the default admin user already exists (by username and email)
-      const existingAdmin = await Admin.findOne({
-        username: 'Admin',
-        email: 'admin@adsr.info',
-        role: 'admin'
-      });
-      if (existingAdmin) {
-        console.log('Default admin user already exists.');
-        return;
-      }
+// const createDefaultAdmin = async () => {
+//     try {
+//       // Check if the default admin user already exists (by username and email)
+//       const existingAdmin = await Admin.findOne({
+//         username: 'Admin',
+//         email: 'admin@adsr.info',
+//         role: 'admin'
+//       });
+//       if (existingAdmin) {
+//         console.log('Default admin user already exists.');
+//         return;
+//       }
   
-      // Create the default admin user
-      const admin = new Admin({
-        username: 'Admin',
-        email: 'admin@adsr.info',
-        role: 'admin',
-        // Add any other necessary fields for your user model
-      });
+//       // Create the default admin user
+//       const admin = new Admin({
+//         username: 'Admin',
+//         email: 'admin@adsr.info',
+//         role: 'admin',
+//         // Add any other necessary fields for your user model
+//       });
   
-      // Use Passport's register method to hash the password and save the user
-      Admin.register(admin, 'admin', (err, user) => {
-        if (err) {
-          console.error('Error creating default admin user:', err);
-          return;
-        }
-        console.log('Default admin user created:', user.username);
-      });
-    } catch (error) {
-      console.error('Error creating default admin user:', error);
-    }
-  };
+//       // Use Passport's register method to hash the password and save the user
+//       Admin.register(admin, 'admin', (err, user) => {
+//         if (err) {
+//           console.error('Error creating default admin user:', err);
+//           return;
+//         }
+//         console.log('Default admin user created:', user.username);
+//       });
+//     } catch (error) {
+//       console.error('Error creating default admin user:', error);
+//     }
+//   };
   
-  // Call the function to create the default admin user
-  createDefaultAdmin();
+//   // Call the function to create the default admin user
+//   createDefaultAdmin();

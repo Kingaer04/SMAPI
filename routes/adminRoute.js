@@ -9,10 +9,8 @@ router.post("/signUp", adminController.SignUp)
 router.post("/update/:id", adminController.verifyToken, adminController.update)
 router.delete('/delete/:id', adminController.verifyToken, adminController.delete)
 router.get('/signOut', adminController.signOut)
-router.get('/', (req, res) => {
-    res.json({
-        message: "Connection sucessfull "
-    })
+router.get('/kin', (req, res) => {
+    res.send("YO")
 })
 
 export default router
